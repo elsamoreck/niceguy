@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop Being the Nice Guy - Become the Strong Man She Respects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            overflow-x: hidden;
+            background: #000000;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 25%, #000000 50%, #1a1a1a 75%, #000000 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(220, 38, 38, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(220, 38, 38, 0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .float-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.04;
+            animation: float 8s ease-in-out infinite;
+            color: #dc2626;
+        }
+        
+        .float-icon:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .float-icon:nth-child(2) { top: 25%; right: 15%; animation-delay: 2s; }
+        .float-icon:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+        .float-icon:nth-child(4) { bottom: 20%; right: 25%; animation-delay: 6s; }
+        .float-icon:nth-child(5) { top: 60%; left: 8%; animation-delay: 1s; }
+        .float-icon:nth-child(6) { top: 45%; right: 12%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.03; }
+            25% { transform: translateY(-15px) rotate(5deg); opacity: 0.06; }
+            50% { transform: translateY(-8px) rotate(-3deg); opacity: 0.04; }
+            75% { transform: translateY(-20px) rotate(2deg); opacity: 0.08; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding: 80px 0;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.8);
+        }
+        
+        .hero-text .highlight {
+            color: #dc2626;
+            position: relative;
+        }
+        
+        .hero-text .hook {
+            font-size: 1.6rem;
+            color: #dc2626;
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        
+        .hero-text .subheading {
+            font-size: 1.4rem;
+            color: #e5e5e5;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        .limited-banner {
+            background: linear-gradient(45deg, #dc2626, #991b1b);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+            animation: urgency-pulse 3s infinite;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        @keyframes urgency-pulse {
+            0%, 100% { box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4); }
+            50% { box-shadow: 0 8px 35px rgba(220, 38, 38, 0.7); }
+        }
+        
+        .strategy-preview {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.15), rgba(220, 38, 38, 0.05));
+            border-left: 4px solid #dc2626;
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 12px;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .strategy-preview h3 {
+            color: #dc2626;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        
+        .strategy-preview ul {
+            list-style: none;
+            color: #ffffff;
+        }
+        
+        .strategy-preview li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        .strategy-preview li::before {
+            content: '💪';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+        
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .comparison-box {
+            width: 100%;
+            max-width: 450px;
+            background: linear-gradient(145deg, #1a1a1a, #000000);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 50px rgba(220, 38, 38, 0.1);
+            border: 2px solid rgba(220, 38, 38, 0.2);
+        }
+        
+        .comparison-header {
+            text-align: center;
+            color: #dc2626;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .comparison-item {
+            background: linear-gradient(135deg, #2c2c2c, #1a1a1a);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px solid rgba(220, 38, 38, 0.15);
+        }
+        
+        .comparison-label {
+            font-size: 0.9rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nice-guy {
+            border-color: rgba(107, 114, 128, 0.3);
+        }
+        
+        .nice-guy .comparison-label {
+            color: #6b7280;
+        }
+        
+        .strong-man {
+            border-color: rgba(220, 38, 38, 0.4);
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.05), rgba(220, 38, 38, 0.02));
+        }
+        
+        .strong-man .comparison-label {
+            color: #dc2626;
+        }
+        
+        .comparison-text {
+            color: #e5e5e5;
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+        
+        .power-quote {
+            background: linear-gradient(145deg, #dc2626, #991b1b);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 35px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-style: italic;
+            box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .problem-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 50%, #1a1a1a 100%);
+            padding: 100px 0;
+            color: white;
+        }
+        
+        .problem-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .problem-header h2 {
+            font-size: 3rem;
+            color: #dc2626;
+            margin-bottom: 25px;
+            font-weight: 900;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+        }
+        
+        .problem-card {
+            background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-8px);
+            border-color: #dc2626;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+        }
+        
+        .problem-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+        }
+        
+        .problem-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #dc2626;
+            font-weight: 700;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section h2 {
+            font-size: 3.2rem;
+            color: white;
+            margin-bottom: 30px;
+            font-weight: 900;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+        }
+        
+        .cta-section .subtitle {
+            font-size: 1.6rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+        
+        .countdown-timer {
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            display: inline-block;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .countdown-timer h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .countdown-display {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .countdown-unit {
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: white;
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+        }
+        
+        .price-section {
+            margin: 40px 0;
+        }
+        
+        .sale-price {
+            font-size: 4rem;
+            color: white;
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+        }
+        
+        .buy-button {
+            display: inline-block;
+            background: linear-gradient(145deg, #ffffff, #f3f4f6);
+            color: #1a1a1a;
+            padding: 25px 60px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 60px;
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 25px;
+            border: 3px solid rgba(220, 38, 38, 0.3);
+        }
+        
+        .buy-button:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            border-color: #dc2626;
+        }
+        
+        .features-section {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 50%, #000000 100%);
+            padding: 100px 0;
+            color: white;
+        }
+        
+        .features-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .features-header h2 {
+            font-size: 3rem;
+            color: #dc2626;
+            margin-bottom: 25px;
+            font-weight: 900;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 50px;
+        }
+        
+        .feature-card {
+            background: linear-gradient(145deg, #1a1a1a, #000000);
+            padding: 45px;
+            border-radius: 20px;
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            transition: all 0.4s ease;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: #dc2626;
+            box-shadow: 0 25px 60px rgba(220, 38, 38, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #dc2626;
+            font-weight: 700;
+        }
+        
+        .feature-card p {
+            color: #e5e5e5;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            margin-top: 60px;
+        }
+        
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.1), rgba(220, 38, 38, 0.05));
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid #dc2626;
+            border: 1px solid rgba(220, 38, 38, 0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #e5e5e5;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: #dc2626;
+            font-size: 1.1rem;
+        }
+        
+        .urgency-section {
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .urgency-section h2 {
+            font-size: 2.8rem;
+            color: #dc2626;
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+        
+        .urgency-text {
+            font-size: 1.4rem;
+            color: #e5e5e5;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .final-cta {
+            background: linear-gradient(145deg, #dc2626, #991b1b);
+            color: white;
+            padding: 25px 70px;
+            font-size: 1.7rem;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 60px;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 0 50px rgba(220, 38, 38, 0.6);
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+        
+        .final-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 60px rgba(220, 38, 38, 0.8);
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 50px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="floating-elements">
+            <div class="float-icon">💪</div>
+            <div class="float-icon">🚫</div>
+            <div class="float-icon">🔥</div>
+            <div class="float-icon">👑</div>
+            <div class="float-icon">⚡</div>
+            <div class="float-icon">💯</div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Stop Being The <span class="highlight">Nice Guy</span> Who Finishes Last</h1>
+                    <p class="hook">"Nice guys finish last because they're too afraid to go after what they want."</p>
+                    <p class="subheading">Transform from the invisible friend-zoned nice guy into the magnetic strong man women actually respect and desire.</p>
+                    
+                    <div class="limited-banner">
+                        ⚡ LIMITED TIME: Get the Complete System for Only $19 ⚡
+                    </div>
+                    
+                    <div class="strategy-preview">
+                        <h3>The 3 Shifts That Change Everything:</h3>
+                        <ul>
+                            <li><strong>Stop Agreeing → Start Playfully Challenging</strong> - Show you have your own opinions and backbone</li>
+                            <li><strong>Stop Apologizing → Start Setting Boundaries</strong> - Replace "sorry" with confident communication</li>
+                            <li><strong>Stop Hinting → Start Being Direct</strong> - Say what you want without fear of rejection</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="power-quote">
+                        "Being nice is your default. Being strong is your choice."
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="comparison-box">
+                        <div class="comparison-header">Before vs After</div>
+                        
+                        <div class="comparison-item nice-guy">
+                            <div class="comparison-label">😔 NICE GUY</div>
+                            <div class="comparison-text">
+                                "Whatever movie you want is fine with me. I don't really have a preference..."
+                            </div>
+                        </div>
+                        
+                        <div class="comparison-item strong-man">
+                            <div class="comparison-label">👑 STRONG MAN</div>
+                            <div class="comparison-text">
+                                "I hate horror movies too. Why don't you choose and I'll let you know what I think?"
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; color: #dc2626; font-weight: bold; margin-top: 25px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px;">
+                            Same situation. Different energy.
+                            <br>Completely different result.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="problem-section">
+        <div class="container">
+            <div class="problem-header">
+                <h2>Why Being "Too Nice" Kills Attraction</h2>
+                <p style="font-size: 1.4rem; color: #e5e5e5;">These nice guy behaviors push women away instead of drawing them in</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">🤝</div>
+                    <h3>Always Agreeing</h3>
+                    <p>You say yes to everything she wants, making yourself seem like you have no personality or backbone of your own.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🙏</div>
+                    <h3>Constant Apologizing</h3>
+                    <p>"Sorry for bothering you," "Sorry to ask," "Sorry for existing" - You apologize for things that don't need apologies.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🤐</div>
+                    <h3>Hiding Your Intent</h3>
+                    <p>You pretend to want friendship when you really want more, hoping she'll magically realize you're boyfriend material.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">🎁</div>
+                    <h3>Over-Giving Without Reciprocation</h3>
+                    <p>You do everything for her while getting nothing in return, hoping she'll eventually appreciate you.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">😬</div>
+                    <h3>Seeking Permission</h3>
+                    <p>"Is it okay if..." "Would you mind if..." "Can I..." - You ask permission for everything instead of leading with confidence.</p>
+                </div>
+                
+                <div class="problem-card">
+                    <div class="problem-icon">😡</div>
+                    <h3>Hidden Resentment</h3>
+                    <p>You're angry inside that your niceness isn't rewarded, but you keep doing it anyway, creating bitterness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Become The Strong Man Women Respect</h2>
+                <p class="subtitle">Stop finishing last. Start being the man women actually want.</p>
+                
+                <div class="countdown-timer">
+                    <h4>⏰ SPECIAL OFFER ENDS IN:</h4>
+                    <div class="countdown-display">
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="hours">23</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="minutes">47</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-unit">
+                            <span class="countdown-number" id="seconds">32</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="price-section">
+                    <div class="sale-price">$19</div>
+                </div>
+                
+                <a href="https://buy.stripe.com/bJe7sE3LU2eCgCK6AS6Vq0r" class="buy-button">Get Instant Access Now</a>
+                
+                <div style="margin-top: 25px; color: rgba(255,255,255,0.8); font-size: 1.1rem;">
+                    ✅ Instant download • 60-day money-back guarantee
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <div class="features-header">
+                <h2>What You'll Master Inside</h2>
+                <p style="font-size: 1.3rem; color: #e5e5e5;">The complete transformation from nice guy to strong man</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">⚔️</span>
+                    <h3>Playful Challenge Mastery</h3>
+                    <p>Learn exactly how to disagree and challenge her opinions in a way that creates attraction instead of conflict - the art of being assertive without being aggressive.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Direct Intent Communication</h3>
+                    <p>Stop hiding what you want. Master the language of confident, direct communication that makes your romantic interest clear from day one.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🛡️</span>
+                    <h3>Boundary Setting Framework</h3>
+                    <p>Replace constant apologizing with confident boundary-setting. Learn to say "no" without guilt and "yes" without resentment.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">👑</span>
+                    <h3>Self-Respect Principles</h3>
+                    <p>Build unshakeable self-respect that makes you naturally attractive. Stop seeking validation and start commanding respect.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💪</span>
+                    <h3>Authentic Masculinity</h3>
+                    <p>Discover the difference between toxic masculinity and authentic strength - be confident without being arrogant, strong without being domineering.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🔥</span>
+                    <h3>Action-Taking Confidence</h3>
+                    <p>Overcome the fear of rejection that keeps you passive. Learn to go after what you want unapologetically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonial-section">
+        <div class="container">
+            <h2 style="font-size: 3rem; color: #dc2626; margin-bottom: 25px; font-weight: 900;">Real Men, Real Results</h2>
+            <p style="font-size: 1.3rem; color: #e5e5e5; margin-bottom: 60px;">Men who stopped being nice and started being strong</p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was the definition of friend-zone guy. Always there for her, never her first choice. This system taught me to be direct and set boundaries. Now I
